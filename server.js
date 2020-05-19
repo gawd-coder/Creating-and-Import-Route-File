@@ -4,6 +4,9 @@ const fs = require("fs");
 //library to handle http errors
 const createError = require("http-errors");
 const app = express();
+let light = require("./routes/devices/light")
+//telling express to use light object for the /devices/light route
+app.use("/devices/light",light);
 //turning on url encoding and telling express to use JSON
 app.use(express.urlencoded({
     extended:true
